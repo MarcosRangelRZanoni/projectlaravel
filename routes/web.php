@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use PhpParser\Node\Expr\FuncCall;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +12,7 @@ use PhpParser\Node\Expr\FuncCall;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', 'App\Http\Controllers\PrimeiroController@hello');
 
 Route::prefix('usuario')->group(function(){
     Route::get('', function(){
@@ -34,7 +34,6 @@ Route::get('/users/{id}', function($id=null){
 Route::get('/users/{paramA}/{paramB}', function($paramA, $paramB){
     return 'Parametros: '.$paramA.' - '.$paramB;
 });
-
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
